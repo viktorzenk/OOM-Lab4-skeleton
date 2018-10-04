@@ -18,7 +18,7 @@ public class TimeZoneTranslatorTest {
 	public void shiftTimeZone() {
 		DateTime timeInSweden = new DateTime(2018,10,2,15,16,30);
 		DateTime timeInUSA = TimeZoneTranslator.shiftTimeZone(timeInSweden, TimeZone.CENTRAL_EUROPEAN_TIME.getOffset(), TimeZone.US_CENTRAL.getOffset());
-		assertEquals(timeInUSA.toString(), "2018-10-02 08:16:30");
+		assertEquals(timeInUSA.toString(), "2018-10-02 08:16");
 	}
 	
 	@Test
@@ -33,18 +33,18 @@ public class TimeZoneTranslatorTest {
 		
 		Event kalasShifted = TimeZoneTranslator.shiftEventTimeZone(kalas,TimeZone.CENTRAL_EUROPEAN_TIME, TimeZone.US_CENTRAL);
 		
-		assertEquals(kalasShifted.getStartDate().toString(), "2018-10-03 11:00:00");
-		assertEquals(kalasShifted.getEndDate().toString(), "2018-10-03 13:00:00");
+		assertEquals(kalasShifted.getStartDate().toString(), "2018-10-03 11:00");
+		assertEquals(kalasShifted.getEndDate().toString(), "2018-10-03 13:00");
 	}
 	
 	@Test
 	public void shiftTimeZone2() {
 		DateTime timeInSweden = new DateTime(2016,1,1,6,0,0);
 		DateTime timeInUSA = TimeZoneTranslator.shiftTimeZone(timeInSweden, TimeZone.CENTRAL_EUROPEAN_TIME.getOffset(), TimeZone.US_PACIFIC.getOffset());
-		assertEquals(timeInUSA.toString(), "2015-12-31 21:00:00");
+		assertEquals(timeInUSA.toString(), "2015-12-31 21:00");
 		
 		timeInUSA = new DateTime(2015,12,31,21,0,0);
 		timeInSweden = TimeZoneTranslator.shiftTimeZone(timeInUSA, TimeZone.US_PACIFIC.getOffset(), TimeZone.CENTRAL_EUROPEAN_TIME.getOffset());
-		assertEquals(timeInSweden.toString(), "2016-01-01 06:00:00");
+		assertEquals(timeInSweden.toString(), "2016-01-01 06:00");
 	}
 }
