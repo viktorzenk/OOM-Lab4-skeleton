@@ -14,7 +14,7 @@ public class DateTimeTest {
 	@Test
 	public void stringTest() {
 		DateTime date1 = new DateTime(2018,10,3,11,0,0);
-		assertEquals(date1.toString(),"2018-10-03 11:00:00");
+		assertEquals(date1.toString(),"2018-10-03 11:00");
 		
 		DateTime date2 = new DateTime("2018-10-03 12:00:00");
 		DateTime date3 = new DateTime(2018,10,3,12,0,0);
